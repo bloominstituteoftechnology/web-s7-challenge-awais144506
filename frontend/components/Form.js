@@ -13,7 +13,7 @@ const validationErrors = {
 const schema = yup.object().shape({
   fullName: yup
     .string()
-    .required("Name is Required.")
+    .required("Name is Required.").trim()
     .min(3, validationErrors.fullNameTooShort)
     .max(20, validationErrors.fullNameTooLong),
 
