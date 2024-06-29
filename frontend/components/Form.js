@@ -40,7 +40,7 @@ const initialFormValues = {
   toppings: []
 }
 
-const initialFormErrors={
+const initialFormErrors = {
   fullName: "",
   size: "",
 }
@@ -83,18 +83,17 @@ export default function Form() {
     axios.post("http://localhost:9009/api/order", formValues)
       .then((res) => {
         console.log(res)
-        setFormValues(initialFormValues),
-          setServerSuccess(res.data.message),
-          setServerFailure()
+        setFormValues(initialFormValues)
+        setServerSuccess(res.data.message)
+        setServerFailure()
       }
       )
       .catch(err => {
         console.log(err)
-        setFormValues(initialFormValues)
         setServerFailure(err.data.message)
         serverSuccess()
       })
-   
+
 
   }
   return (
