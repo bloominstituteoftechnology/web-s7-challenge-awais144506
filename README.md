@@ -51,7 +51,7 @@ Your finished product will have to match the functionality of the design exactly
 Study with Postman the following endpoint: `[POST] http://localhost:9009/api/order`
 
 Here is an example of a **valid** request payload:
-
+  
 ```js
 { "fullName": "Jane Doe", "size": "L", "toppings": ["1","2","3","4","5"] }
 ```
