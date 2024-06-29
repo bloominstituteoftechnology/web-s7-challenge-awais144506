@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-describe('Sprint 7 Challenge Learner Tests', () => {
+describe.only('Sprint 7 Challenge Learner Tests', () => {
   /*
   👉 TASK 1 - Unit Testing of sum function at the bottom of this module
 
@@ -14,7 +14,15 @@ describe('Sprint 7 Challenge Learner Tests', () => {
     [4] sum('1', 2) // returns 3
     [5] sum('10', '3') // returns 13
   */
-
+  test(`Check Sum`, () => {
+    expect(() => sum('a', 1)).toThrow('pass valid numbers');
+    expect(() => sum()).toThrow("pass valid numbers")
+  })
+  test('should return the sum of two numbers for valid inputs', () => {
+    expect(sum(1, 2)).toBe(3);
+    expect(sum('3', 4)).toBe(7);  // String input should be converted to number
+    expect(sum(5, '6')).toBe(11); // String input should be converted to number
+  });
   /*
   👉 TASK 2 - Integration Testing of HelloWorld component at the bottom of this module
 
@@ -29,9 +37,13 @@ describe('Sprint 7 Challenge Learner Tests', () => {
     [5] renders a text that reads "JavaScript is pretty awesome"
     [6] renders a text that includes "javaScript is pretty" (use exact = false)
   */
-  test('you can comment out this test', () => {
-    expect(true).toBe(false)
+  test(`Check Texts`, () => {
+    render(<HelloWorld />)
+    expect(screen.getByText("The Truth"))
+    expect(screen.getByText("JavaScript is pretty awesome"))
   })
+
+  test (`Check Links`)
 })
 
 function sum(a, b) {
