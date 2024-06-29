@@ -41,9 +41,10 @@ describe.only('Sprint 7 Challenge Learner Tests', () => {
     render(<HelloWorld />)
     expect(screen.getByText("The Truth"))
     expect(screen.getByText("JavaScript is pretty awesome"))
+    expect(screen.getByText)
   })
 
-  test (`Check Links`)
+ 
 })
 
 function sum(a, b) {
