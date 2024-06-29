@@ -37,7 +37,7 @@ beforeEach(() => { renderApp(<Router><App /></Router>) })
 afterEach(() => { server.resetHandlers() })
 
 describe.only('Sprint 7 Challenge Codegrade Tests', () => {
-  describe('App routing', () => {
+  describe.only('App routing', () => {
     test('[1] <App /> Renders without crashing', () => {
       // screen.debug()
     })
@@ -83,7 +83,7 @@ describe.only('Sprint 7 Challenge Codegrade Tests', () => {
       submitDisabled: submit.disabled,
     }
   }
-  describe('Form submission success', () => {
+  describe.only('Form submission success', () => {
     beforeEach(() => {
       fireEvent.click(screen.getByText('Order', queryOptions))
       getFormElements()
@@ -144,7 +144,7 @@ describe.only('Sprint 7 Challenge Codegrade Tests', () => {
       })
     })
   })
-  describe('Form validation', () => {
+  describe.only('Form validation', () => {
     beforeEach(() => {
       fireEvent.click(screen.getByText('Order', queryOptions))
       getFormElements()
